@@ -9,11 +9,13 @@ License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Use shortcode [latest-posts] to post or page to listing latest posts.
+This is simple plugin for listing latest posts from your blog.
 
 == Description ==
 
-This is a simple plugin for listing latest posts from your blog.Use shortcode [latest-posts] to post or page.Then see,a list of latest posts will appear to your desired post or page.
+This is a simple plugin for listing latest posts from your blog.Use shortcode <pre>[latest-posts]</pre> to post or page.Then see,a list of latest posts will appear to your desired post or page.
+
+For live demo visit http://skjoybd.com
 
 == Installation ==
 
@@ -25,11 +27,11 @@ This is a simple plugin for listing latest posts from your blog.Use shortcode [l
 
 <strong>You:</strong> have finished your installation.<br>
 
-Now go to admin panel from <strong>Dashboard > Settings > Latest Posts</strong> Necessary settings.
+Now go to admin panel from <strong>Dashboard > Settings > Latest Posts</strong> for Necessary settings.
 
 <ul>
 	<li>Now go to a post or page whatever you like.</li>
-	<li>Paste this shortcode into the page or post and save it: [latest-posts]</li>
+	<li>Paste this shortcode into the page or post and save it: <pre>[latest-posts]</pre></li>
 	<li>Goto page or post preview,then see the result.</li>
 </ul>
 
