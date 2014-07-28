@@ -13,7 +13,7 @@ This is simple plugin for listing latest posts from your blog.
 
 == Description ==
 
-This is a simple plugin for listing latest posts from your blog.Use shortcode <pre>[latest-posts]</pre> to post or page.Then see,a list of latest posts will appear to your desired post or page.
+This is a simple plugin for listing latest posts from your blog.You can use shortcode or build in widget for displaying Latest Posts.
 
 For live demo visit http://skjoybd.com
 
@@ -33,6 +33,7 @@ Now go to admin panel from <strong>Dashboard > Settings > Latest Posts</strong> 
 	<li>Now go to a post or page whatever you like.</li>
 	<li>Paste this shortcode into the page or post and save it: <pre>[latest-posts]</pre></li>
 	<li>Goto page or post preview,then see the result.</li>
+	<li>If you want to display Latest Posts to your sidebar go to <strong>Dashboard > Appearance > Widgets</strong> and drag <strong>JP Latest Posts Widget</strong> to your sidebar.Then see the result.</li>
 </ul>
 
 == Screenshots ==
