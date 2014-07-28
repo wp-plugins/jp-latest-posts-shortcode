@@ -15,10 +15,14 @@
 
 include_once( 'lp-options.php' );
  
+ // Creating main function for latest posts
+ 
 function jp_latest_posts_shortcode() { ?>
+	<!-- Necessary style for posts list -->
 	<style type="text/css">
 		.jp-latest-posts {
 			list-style: none;
+			overflow: hidden;
 			display: block;
 		}
 		.jp-latest-posts li {
@@ -26,6 +30,9 @@ function jp_latest_posts_shortcode() { ?>
 			overflow: hidden;
 			padding: 5px 0px;
 			margin: 0px 3px;
+		}
+		.jp-latest-posts li:last-child {
+			border-bottom: 0px;
 		}
 		.jp-latest-posts li img {
 			float: left;
@@ -48,6 +55,7 @@ function jp_latest_posts_shortcode() { ?>
 			color: #9A9A9A;
 		}
 	</style>
+	<!-- Creating Markup for latest posts -->
 	<ul class="jp-latest-posts">
 		<?php  
 			$allcats = get_categories('child_of=0'); 
@@ -82,6 +90,72 @@ function jp_latest_posts_shortcode() { ?>
 	</ul>
 <?php }
 
+// Creating shortcode for displaying to post or page
+
 add_shortcode('latest-posts','jp_latest_posts_shortcode');
+
+
+
+// Creating the widget 
+class jlp_widget extends WP_Widget {
+
+function __construct() {
+parent::__construct(
+// Base ID of your widget
+'jlp_widget', 
+
+// Widget name will appear in UI
+__('JP Latest Posts Widget', 'jlp_widget_domain'), 
+
+// Widget description
+array( 'description' => __( 'A simple widget for listing latest post from your blog', 'jlp_widget_domain' ), ) 
+);
+}
+
+// Creating widget front-end
+// This is where the action happens
+public function widget( $args, $instance ) {
+$title = apply_filters( 'widget_title', $instance['title'] );
+// before and after widget arguments are defined by themes
+echo $args['before_widget'];
+if ( ! empty( $title ) )
+echo $args['before_title'] . $title . $args['after_title'];
+
+// This is where you run the code and display the output
+
+jp_latest_posts_shortcode();
+echo $args['after_widget'];
+}
+		
+// Widget Backend 
+public function form( $instance ) {
+if ( isset( $instance[ 'title' ] ) ) {
+$title = $instance[ 'title' ];
+}
+else {
+$title = __( 'Latest Posts', 'jlp_widget_domain' );
+}
+// Widget admin form
+?>
+<p>
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+</p>
+<?php 
+}
+	
+// Updating widget replacing old instances with new
+public function update( $new_instance, $old_instance ) {
+$instance = array();
+$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+return $instance;
+}
+} // Class jlp_widget ends here
+
+// Register and load the widget
+function jlp_load_widget() {
+	register_widget( 'jlp_widget' );
+}
+add_action( 'widgets_init', 'jlp_load_widget' );
 
 ?>
