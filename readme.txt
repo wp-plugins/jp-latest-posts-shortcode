@@ -1,9 +1,9 @@
 === JP Latest Posts Shortcode ===
 Contributors: Skjoy
 Donate link: http://skjoybd.com/donate
-Tags: latest post,shortcode,posts,latest posts by shortcode
+Tags: latest post,shortcode,posts,latest posts using shortcode,featured image,post meta
 Requires at least: 3.0
-Tested Up to: 3.8
+Tested Up to: 4.1.1
 Stable Tag: 2.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ This is simple plugin for listing latest posts from your blog.
 
 == Description ==
 
-This is a simple plugin for listing latest posts from your blog.You can use shortcode or build in widget for displaying Latest Posts.
+This is a simple plugin for listing latest posts from your blog.Use shortcode [latest-posts] to post or page.Then see,a list of latest posts will appear to your desired post or page.This plugin also contains a widget for showing latest post in widget/sidebar area.Enjoy...
 
 For live demo visit http://skjoybd.com
 

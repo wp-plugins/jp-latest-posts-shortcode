@@ -52,14 +52,14 @@ function lp_theme_options_page() {
 
 	<table class="form-table"><!-- Grab a hot cup of coffee, yes we're using tables! -->
 	
-	<tr valign="top"><th scope="row"><label for="posts_count">How many posts will show</label></th>
+	<tr valign="top"><th scope="row"><label for="posts_count">Show Post</label></th>
 	<td>
 	<input id="posts_count" name="lp_options[posts_count]" type="text" value="<?php  esc_attr_e($settings['posts_count']); ?>" />
-	<label for="posts_count">Chose how many latest posts will show from each category.Default 1.</label>
+	<label for="posts_count">Chose how many latest posts will show from each category.</label>
 	</td>
 	</tr>
 	
-	<tr valign="top"><th scope="row"><label for="feat_img_size">Featured image size</label></th>
+	<tr valign="top"><th scope="row"><label for="feat_img_size">Featured Image Size</label></th>
 	<td>
 	<input id="feat_img_size" name="lp_options[feat_img_size]" type="text" value="<?php  esc_attr_e($settings['feat_img_size']); ?>" />
 	<label for="feat_img_size">Default featured image size 50x50.Input your size by px.Numeric only.</label>
@@ -73,10 +73,10 @@ function lp_theme_options_page() {
 	</td>
 	</tr>
 	
-	<tr valign="top"><th scope="row">Post Info</th>
+	<tr valign="top"><th scope="row">Post Meta</th>
 	<td>
 	<input type="checkbox" id="post_info" name="lp_options[post_info]" value="1" <?php checked( true, $settings['post_info'] ); ?> />
-	<label for="post_info">Show post info under title.</label>
+	<label for="post_info">Show post Meta under title.</label>
 	</td>
 	</tr>
 
